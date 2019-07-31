@@ -1,4 +1,3 @@
----
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
@@ -26,6 +25,7 @@ metadata:
     flux.weave.works/tag.tidewhisperer: glob:develop-*
     flux.weave.works/tag.tools: glob:develop-*
     flux.weave.works/tag.user: glob:develop-*
+    flux.weave.works/tag.slack-tidebot: glob:master-*
 spec:
   releaseName: develop-tidepool
   chart:
