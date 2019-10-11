@@ -2,6 +2,7 @@ environments:
   test:
     tidepool:
       gitops:
-        default: "glob:develop-*"
-        blip: "glob:release-1.29*"
-        export: "glob:release-1.4-*"
+        default: glob:develop-*
+        blip: glob:release-1.29*
+        export: glob:release-1.4-*
+        slack-tidebot: glob:master-*
