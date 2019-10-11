@@ -1,4 +1,122 @@
+aws:
+  accountNumber: 118346523422
+  iamUsers:
+  - derrickburns
+  - derrickburns-cli
+  - lennartgoedhart
+  - lennartgoedhart-cli
+  - benderr
+  - benderr-cli
+  - jamesraby
+  - jamesraby-cli
+  - haroldbernard
+  - haroldbernard-cli
+cluster:
+  cloudWatch:
+    clusterLogging:
+      enableTypes:
+      - authenticator
+      - api
+      - controllerManager
+      - scheduler
+  metadata:
+    name: qa1
+    region: us-west-2
+  nodeGroups:
+  - desiredCapacity: 4
+    iam:
+      attachPolicyARNs:
+      - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
+      - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
+      - arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess
+      withAddonPolicies:
+        autoScaler: true
+        certManager: true
+        externalDNS: true
+    instanceType: m5.large
+    maxSize: 10
+    minSize: 1
+    name: ng
+  vpc:
+    cidr: 10.47.0.0/16
+email: derrick@tidepool.org
 environments:
-  test:
+  qa1:
+    mongodb:
+      enabled: false
     tidepool:
+      chart:
+        path: charts/tidepool/0.1.7
+        ref: develop
+      buckets:
+        data: tidepool-qa1-data
+        asset: tidepool-qa1-asset
+      certificate:
+        issuer: letsencrypt-production
+        secret: tls
+      enabled: true
+      gateway:
+        default:
+          protocol: https
+        http:
+          dnsNames: []
+          enabled: false
+        https:
+          dnsNames:
+          - qa1.development.tidepool.org
+          - dev.tidepool.org
+          - dev-api.tidepool.org
+          - dev-app.tidepool.org
+          - dev-uploads.tidepool.org
+          enabled: true
       gitops:
+        default: "glob:develop-*"
+        blip: "glob:release-1.29*"
+        export: "glob:release-1.4-*"
+      hpa:
+        enabled: true
+      mongodb:
+        enabled: false
+      nosqlclient:
+        enabled: true
+      source: dev
+github:
+  git: git@github.com:tidepool-org/cluster-qa1
+  https: https://github.com/tidepool-org/cluster-qa1
+kubeconfig: $HOME/.kube/config
+logLevel: debug
+pkgs:
+  amazon-cloudwatch:
+    enabled: true
+  certmanager:
+    enabled: true
+  cluster-autoscaler:
+    enabled: true
+  datadog:
+    enabled: false
+  external-dns:
+    enabled: true
+  external-secrets:
+    enabled: true
+    poller_interval: "60000"
+  flux:
+    enabled: true
+  fluxcloud:
+    enabled: true
+    secret: slack
+    username: derrickburns
+  gloo:
+    enabled: true
+    namespace: gloo-system
+  metrics-server:
+    enabled: true
+  prometheus-operator:
+    enabled: true
+  reloader:
+    enabled: true
+  sumologic:
+    enabled: true
+  thanos:
+    bucket: tidepool-thanos
+    enabled: true
+    secret: thanos-objstore-config
