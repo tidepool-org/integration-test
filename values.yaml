@@ -2,4 +2,3 @@ environments:
   test:
     tidepool:
       gitops:
-        
