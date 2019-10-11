@@ -41,7 +41,7 @@ cluster:
     cidr: 10.47.0.0/16
 email: derrick@tidepool.org
 environments:
-  qa1:
+  test:
     mongodb:
       enabled: false
     tidepool:
