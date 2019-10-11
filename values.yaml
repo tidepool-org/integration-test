@@ -2,4 +2,4 @@ environments:
   test:
     tidepool:
       gitops:
-        slack-tidebot:
+        slacktidebot:
