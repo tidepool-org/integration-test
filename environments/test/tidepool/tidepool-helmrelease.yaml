@@ -26,7 +26,7 @@ metadata:
     flux.weave.works/tag.tools: glob:develop-*
     flux.weave.works/tag.user: glob:develop-*
     flux.weave.works/tag.slack-tidebot: glob:test-*
-    fluxcd.io/tag.slack-tidebot: glob:test-*
+    fluxcd.io/tag.slack-tidebot: glob:master-*
 spec:
   releaseName: develop-tidepool
   chart:
