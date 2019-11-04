@@ -26,7 +26,16 @@ metadata:
     flux.weave.works/tag.tools: glob:develop-*
     flux.weave.works/tag.user: glob:develop-*
     flux.weave.works/tag.slack-tidebot: glob:test-*
-    fluxcd.io/tag.slack-tidebot: glob:master-*
+    fluxcd.io/tag.slack-tidebot: glob:k8s-*
+    fluxcd.io/tag.data: glob:history_data_model2-*
+    fluxcd.io/tag.blob: glob:history_data_model2-*
+    fluxcd.io/tag.auth: glob:history_data_model2-*
+    fluxcd.io/tag.image: glob:history_data_model2-*
+    fluxcd.io/tag.migrations: glob:history_data_model2-*
+    fluxcd.io/tag.notification: glob:history_data_model2-*
+    fluxcd.io/tag.task: glob:history_data_model2-*
+    fluxcd.io/tag.tools: glob:history_data_model2-*
+    fluxcd.io/tag.user: glob:history_data_model2-*
 spec:
   releaseName: develop-tidepool
   chart:
