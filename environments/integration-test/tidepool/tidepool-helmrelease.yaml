@@ -36,6 +36,7 @@ metadata:
     fluxcd.io/tag.task: glob:history_data_model2-*
     fluxcd.io/tag.tools: glob:history_data_model2-*
     fluxcd.io/tag.user: glob:history_data_model2-*
+    fluxcd.io/tag.integration-test: glob:master-*
 spec:
   releaseName: develop-tidepool
   chart:
