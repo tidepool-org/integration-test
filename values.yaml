@@ -1,5 +1,5 @@
 environments:
-  test:
+  integration-test:
     tidepool:
       gitops:
         default: glob:develop-*
