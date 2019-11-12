@@ -101,3 +101,5 @@ spec:
       image: tidepool/shoreline:debug-5c12cfb915a007ae70a9735b4d04c2a35920ae7f
     tidewhisperer:
       image: tidepool/tide-whisperer:develop-26174c02c95fe1d5b092fea68b7046fd3fc1e798
+    integration-test:
+      image: tidepool/integration-test:master-771486fcc8c03a0362838f721b3247a0afd4f58d
