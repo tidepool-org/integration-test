@@ -1,28 +1,9 @@
 environments:
-  test:
+  integration-test:
     tidepool:
-      # chart:
-      #   path: charts/tidepool/0.1.7
-      #   ref: develop
-      # buckets:
-      #   data: tidepool-qa1-data
-      #   asset: tidepool-qa1-asset
-      # certificate:
-      #   issuer: letsencrypt-production
-      #   secret: tls
-      # enabled: true
-      # gateway:
-      #   default:
-      #     protocol: https
-      #   http:
-      #     dnsNames: []
-      #     enabled: false
-      #   https:
-      #     dnsNames:
-      #     - qa1.development.tidepool.org
-      #     - dev.tidepool.org
-      #     - dev-api.tidepool.org
-      #     - dev-app.tidepool.org
-      #     - dev-uploads.tidepool.org
-      #     enabled: true
       gitops:
+        default: glob:develop-*
+        blip: glob:release-1.29*
+        export: glob:release-1.4-*
+        slack-tidebot: glob:k8s-*
+        integration-test: glob:master-*
